@@ -1,4 +1,4 @@
-package com.fisa.fridge.inventory.service;
+package com.fisa.fridge.global.util;
 
 import org.springframework.stereotype.Component;
 

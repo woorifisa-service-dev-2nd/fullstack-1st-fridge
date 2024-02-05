@@ -3,6 +3,7 @@ package com.fisa.fridge.food.service;
 import com.fisa.fridge.food.dto.FoodResponseDTO;
 import com.fisa.fridge.food.entity.Food;
 import com.fisa.fridge.food.repository.FoodRepository;
+import com.fisa.fridge.global.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class FoodService {
             return optional.get().toDto();
         }
         else
-            throw new RuntimeException("해당 foodId에 맞는 음식이 없습니다.");
+            throw new NotFoundException("foodId("+foodId+")가 유효하지 않습니다.");
     }
 
     public List<FoodResponseDTO> getFoodList (String category) {

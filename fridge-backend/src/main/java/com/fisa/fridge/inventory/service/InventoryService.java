@@ -2,6 +2,9 @@ package com.fisa.fridge.inventory.service;
 
 import com.fisa.fridge.food.entity.Food;
 import com.fisa.fridge.food.repository.FoodRepository;
+import com.fisa.fridge.global.exception.NotFoundException;
+import com.fisa.fridge.global.exception.PasswordIncorrectException;
+import com.fisa.fridge.global.util.PasswordEncrypt;
 import com.fisa.fridge.inventory.dto.InventoryGetRequestDTO;
 import com.fisa.fridge.inventory.dto.InventoryGetResponseDTO;
 import com.fisa.fridge.inventory.dto.InventoryDeleteRequestDTO;
@@ -60,10 +63,10 @@ public class InventoryService {
             if(inputPassword.equals(realPassword))
                 return true;
             else  //에러 던지기
-                throw new RuntimeException("비밀번호가 일치하지 않아 삭제할 수 없습니다.");
+                throw new PasswordIncorrectException("비밀번호가 일치하지 않습니다.");
         }
         else {
-            throw new RuntimeException("해당 foodId에 맞는 음식이 없습니다.");
+            throw new NotFoundException("inventoryId("+inventoryId+")가 유효하지 않습니다.");
         }
     }
 }

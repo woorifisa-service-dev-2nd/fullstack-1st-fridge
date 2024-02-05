@@ -15,13 +15,13 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class InventoryGetRequestDTO {
 
-    @NotNull
+    @NotNull(message = "foodId는 null이어서는 안됩니다.")
     private Long foodId;
 
-    @NotNull
+    @NotNull(message = "ownerName는 null이어서는 안됩니다.")
 
     private String ownerName;
-    @NotNull
+    @NotNull(message = "ownerPwd는 null이어서는 안됩니다.")
 
     private String ownerPwd;
 
