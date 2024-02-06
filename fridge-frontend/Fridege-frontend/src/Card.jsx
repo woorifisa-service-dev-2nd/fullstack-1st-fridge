@@ -9,7 +9,9 @@ const Card = ({item}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
-    const closeModal = () => setIsOpen(false);
+    const closeModal = () => {
+      setIsOpen(false);
+    }
   // console.log(item);
 
 
@@ -28,12 +30,13 @@ const Card = ({item}) => {
           </div>
           
 <button className="text-2xl px-8 py-4 bg-gradient-to-r from-pink-300 to-blue-300 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg"
-onClick={openModal}>{isOpen && createPortal(
-  <Modal isOpen={isOpen} onClose={closeModal} ></Modal>,
+onClick={openModal}>먹고 힘내기!</button>
+  {isOpen && createPortal(
+  <Modal isOpen={isOpen} onClose={closeModal} action="delete" inventoryId={item.inventoryId} ></Modal>,
   document.body
 )}
-  먹고 힘내기!
-</button>
+  
+
 
     </li>  
   )
