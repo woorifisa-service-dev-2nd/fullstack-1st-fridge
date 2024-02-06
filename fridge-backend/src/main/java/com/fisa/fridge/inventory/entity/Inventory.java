@@ -40,6 +40,7 @@ public class Inventory {
                 .foodName(food.getFood())
                 .ownerName(ownerName)
                 .category(food.getCategory().getCategory())
+                .img(food.getImg())
                 .build();
     }
 

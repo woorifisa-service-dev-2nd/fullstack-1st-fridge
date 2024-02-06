@@ -17,5 +17,7 @@ public class InventoryGetResponseDTO {
 
     private String ownerName;
 
+    private String img;
+
 
 }
