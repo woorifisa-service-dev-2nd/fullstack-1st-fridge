@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import Modal from './Modal';
 import { createPortal } from 'react-dom';
+import { useNavigate, useParams } from "react-router-dom";
+import Modal from './Modal';
 
 const DetailPage = () => {
+
+    let navigate = useNavigate();
+
     const { id } = useParams();
     const [food, setFood] = useState({});
     const [isOpen, open] = useState(false);
     const openModal = () => open(true);
     const closeModal = () => open(false);
+
+    let goBack = () => {
+        navigate(-1);
+    }
 
     fetch(`http://localhost:8080/food/${id}`)
         .then(response => {
@@ -29,7 +36,8 @@ const DetailPage = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-center align-middle pt-6">
+            <div className="flex justify-center align-middle">
+                <button type="button" className="mr-5 px-7 py-3 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={goBack}>목록으로 돌아가기</button>
                 <button type="button" className="px-7 py-3 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={openModal}>냉장고에 담기</button>
             </div>
             {isOpen && createPortal(
