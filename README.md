@@ -5,7 +5,7 @@
 | ![김경은](https://github.com/GyeongEun-Kim.png) | ![박재현](https://github.com/jae-hyeon-park.png) | ![조유정](https://github.com/hellena345.png) | ![홍혜진](https://github.com/HyeJin0102.png) |
 
 # 🍕 ERD
-<img width="443" alt="스크린샷 2024-02-06 오후 8 41 07" src="https://github.com/woorifisa-service-dev-2nd/fullstack-1st-fridge/assets/73164845/47ead4cb-3559-44e6-a90e-0698916b526b">
+<img width="864" alt="스크린샷 2024-02-06 오후 8 58 57" src="https://github.com/woorifisa-service-dev-2nd/fullstack-1st-fridge/assets/73164845/f9409073-6148-40c2-a290-8b353f2a87f1">
 
 # 🖥️ 실행 화면
 <img width="1440" alt="스크린샷 2024-02-06 오후 8 45 25" src="https://github.com/woorifisa-service-dev-2nd/fullstack-1st-fridge/assets/73164845/540f0d7f-2a48-4b8c-95f5-d9d5f3e88af7">
