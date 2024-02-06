@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import makeOptions from './util'
 
-const ModalForm = ({onClose}) => {
+const ModalForm = ({onClose, foodId}) => {
     const navigate = useNavigate();
     const [name, setName] = useState();
     const [password, setPassword] = useState();
 
 
      const addInventory = () => {
-         fetch("http://localhost:8080/inventory/", makeOptions('POST', JSON.stringify({"foodId" : 8,"ownerName" : name, "ownerPwd" : password})) )
+         fetch("http://localhost:8080/inventory/", makeOptions('POST', JSON.stringify({"foodId" : foodId,"ownerName" : name, "ownerPwd" : password})) )
             .then((response) => {
                 if(response.status != 200)
                     alert("에러!!")
