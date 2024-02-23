@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Food from '../components/food'
+import Food from '../components/Food'
 
 
 const dummyData = [
