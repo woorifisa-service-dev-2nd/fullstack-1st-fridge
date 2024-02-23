@@ -54,7 +54,7 @@ const StoreBody = () => {
     const [foods, setFoods] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:8080/food';
+        const url = '3.106.251.237:8080/food';
     
         fetch(url)
             .then(response => response.json())
